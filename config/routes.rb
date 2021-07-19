@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'books/index'
   get 'students/index'
   get 'informations/kasidashi'
+  get '/informations/index'
 
-  post 'informations/add'
+  post 'informations/create'
 end

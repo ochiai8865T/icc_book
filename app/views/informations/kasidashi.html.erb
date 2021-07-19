@@ -1,6 +1,6 @@
 <h1><%= @msg %></h1>
 
-<%= form_with(model: @information, url: {action: 'add'}) do |f| %>
+<%= form_with(model: @information, url: {action: 'create'}) do |f| %>
     <div>
         <%= f.collection_select(:book_id, Book.all, :id,:name) %>
     </div>

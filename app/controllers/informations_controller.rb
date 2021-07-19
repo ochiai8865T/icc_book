@@ -13,8 +13,18 @@ class InformationsController < ApplicationController
         @msg = "貸出手続き"
         @information = Information.new
     end
+    
+    def create
+        @information = Information.new information_params
+        if @information.save
+            redirect_to "/informations/index"
+        else
+            render "kasidashi"
+        end
+    end
 
-    def add
-        
+    private
+    def information_params
+        params.require(:information).permit(:book_id, :student_id, :lending_days)
     end
 end
