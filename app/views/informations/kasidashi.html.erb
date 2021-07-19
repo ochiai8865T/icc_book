@@ -1,0 +1,16 @@
+<h1><%= @msg %></h1>
+
+<%= form_with(model: @information, url: {action: 'add'}) do |f| %>
+    <div>
+        <%= f.collection_select(:book_id, Book.all, :id,:name) %>
+    </div>
+    <div>
+        <%= f.collection_select(:student_id, Student.all, :id,:name) %>
+    </div>
+    <div>
+        <%= f.hidden_field(:lending_days, value: Date.new) %>
+    </div>
+    <div>
+        <%= f.submit("決定") %>
+    </div>
+<% end %>
