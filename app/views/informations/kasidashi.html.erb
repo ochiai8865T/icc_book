@@ -2,7 +2,7 @@
 
 <%= form_with(model: @information, url: {action: 'create'}) do |f| %>
     <div>
-        <%= f.collection_select(:book_id, Book.all, :id,:name) %>
+        <%= f.collection_select(:book_id, Book.joins(:information), :id,:name) %>
     </div>
     <div>
         <%= f.collection_select(:student_id, Student.all, :id,:name) %>
